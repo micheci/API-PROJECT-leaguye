@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type='text/css' href="/css/style.css">
+    <script src="https://kit.fontawesome.com/5152f77347.js" crossorigin="anonymous"></script>
+</head>
+<body>
+   
+
+
+    <h1>Champs</h1>
+    <h2>Add A Champ:</h2>
+
+    <form action="/addChamp" method="POST" class="form">
+        <input type="text" placeholder="Enter Champ" name="champName">
+        <input type="text" placeholder="Enter birth location" name="champBirthLocation">
+        <input type="submit">
+    </form>
+
+    <ul class="Champs">
+    <% for(let i=0; i < info.length; i++) {%>
+        <div class="ChampFull">
+        <li class="Champ">
+            
+            <h1 class ="headings">Champion Name:<%= info[i].champName %></h1>
+            <h1 class="headings">Location: <%= info[i].champBirthLocation %></h1>
+            <i class="fa-solid fa-trash"></i>
+           s
+        </li>
+
+    <!-- if champ.Name=azir => image/azir -->
+    <!-- if champName=ekko=> image/ekko -->
+    
+   <% if (info[i].champName=="azir") { %>
+       <img src="images/azir.jpg" alt="azir">
+       <% } else if(info[i].champName==="ekko") { %>
+        <img src="images/ekko.jpg" alt="ekko">
+        
+    <% }else{%>
+        <img src="images/jinx.jpg" alt="jinx">
+        <%}%>
+            
+
+
+    
+    <!-- <img src="images/azir.jpg" alt="champPic"/> -->
+    </div>
+    <% } %>
+    
+    </ul>
+   
+
+    
+
+    
+
+    <script src="/public/js/main.js"></script>
+</body>
+</html>
